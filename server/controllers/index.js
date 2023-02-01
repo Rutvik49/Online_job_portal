@@ -1,8 +1,9 @@
 const CANDIDATE = require('../models/Candidate.model')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const JWT_SECRET = 'chaudhary'
 const otp_generator = require('otp-generator')
+const {sendMail} = require('../Helpers/sendEmail')
+const JWT_SECRET = 'chaudhary'
 
 //  Generate OTP route
 async function GenerateOtp(req, res) {
@@ -11,7 +12,8 @@ async function GenerateOtp(req, res) {
     upperCaseAlphabets: false,
     specialChars: false,
   })
-  res.status(201).send({ OTP: req.app.locals.OTP })
+  sendMail(req.app.locals.OTP)
+  return res.status(201).send({ OTP: req.app.locals.OTP })
 }
 
 //  Candidate Signup route
@@ -19,7 +21,7 @@ async function candidateSignup(req, res) {
   try {
     let user = await CANDIDATE.findOne({ email: req.body.email })
     if (user) {
-      return res.status(400).json({ error: 'email already registered' })
+      return res.status(400).send({ error: 'email already registered' })
     }
     const salt = await bcrypt.genSalt(10)
     const securePassword = await bcrypt.hash(req.body.password, salt)
@@ -33,10 +35,10 @@ async function candidateSignup(req, res) {
 
     const id = user.id
     const authtoken = jwt.sign(id, JWT_SECRET)
-    return res.status(200).json({ authtoken })
+    return res.status(200).send({ authtoken })
   } catch (error) {
     console.log(error)
-    return res.status(500).json({ error: 'Faild to register' })
+    return res.status(500).send({ error: 'Faild to register' })
   }
 }
 
