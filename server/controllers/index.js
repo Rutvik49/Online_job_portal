@@ -5,9 +5,13 @@ const JWT_SECRET = 'chaudhary'
 const otp_generator = require('otp-generator')
 
 //  Generate OTP route
-async function GenerateOtp (req,res){
-  req.app.locals.OTP = await otp_generator.generate(6, { lowerCaseAlphabets: false, upperCaseAlphabets: false, specialChars: false})
-  res.status(201).send({ OTP : req.app.locals.OTP })
+async function GenerateOtp(req, res) {
+  req.app.locals.OTP = await otp_generator.generate(6, {
+    lowerCaseAlphabets: false,
+    upperCaseAlphabets: false,
+    specialChars: false,
+  })
+  res.status(201).send({ OTP: req.app.locals.OTP })
 }
 
 //  Candidate Signup route
@@ -32,11 +36,31 @@ async function candidateSignup(req, res) {
     return res.status(200).json({ authtoken })
   } catch (error) {
     console.log(error)
-    return res.status(500).json({ error: 'faild to register' })
+    return res.status(500).json({ error: 'Faild to register' })
+  }
+}
+
+//  Candidate SignIn route
+async function candidateSignin(req, res) {
+  try {
+    let user = await CANDIDATE.findOne({ email: req.body.email })
+    if (user) {
+      let passwordCompare = await bcrypt.compare(req.body.password,user.password)
+      if (passwordCompare) {
+        const id = user.id
+        const authtoken = jwt.sign(id, JWT_SECRET)
+        return res.status(200).json({ authtoken })
+      }
+      return res.status(400).send({ error: 'Invalid pass Credential' })
+    }
+    return res.status(400).send({ error: 'Invalid email Credential' })
+  } catch (error) {
+    return res.status(500).send({ error: 'Failed to login' })
   }
 }
 
 module.exports = {
   candidateSignup,
-  GenerateOtp
+  candidateSignin,
+  GenerateOtp,
 }
