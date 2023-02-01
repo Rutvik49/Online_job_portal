@@ -2,7 +2,15 @@ const CANDIDATE = require('../models/Candidate.model')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const JWT_SECRET = 'chaudhary'
+const otp_generator = require('otp-generator')
 
+//  Generate OTP route
+async function GenerateOtp (req,res){
+  req.app.locals.OTP = await otp_generator.generate(6, { lowerCaseAlphabets: false, upperCaseAlphabets: false, specialChars: false})
+  res.status(201).send({ OTP : req.app.locals.OTP })
+}
+
+//  Candidate Signup route
 async function candidateSignup(req, res) {
   try {
     let user = await CANDIDATE.findOne({ email: req.body.email })
@@ -30,4 +38,5 @@ async function candidateSignup(req, res) {
 
 module.exports = {
   candidateSignup,
+  GenerateOtp
 }
