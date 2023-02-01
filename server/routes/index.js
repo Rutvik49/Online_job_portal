@@ -1,8 +1,9 @@
 const express = require('express')
-const { candidateSignup } = require('../controllers')
-const router = express.Router();
+const { candidateSignup,GenerateOtp } = require('../controllers')
+const router = express.Router()
+const {localVariables} = require('../middleware/validate')
 
-//  Candidate Signup route
-router.post('/candidatesignup',candidateSignup);
+router.post('/auth/candidatesignup',candidateSignup);
+router.get('/generateotp',localVariables ,GenerateOtp);
 
 module.exports = router;
