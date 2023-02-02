@@ -4,7 +4,6 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const otp_generator = require('otp-generator')
 const { sendMail } = require('../Helpers/sendEmail')
-const JWT_SECRET = 'chaudhary'
 
 //  Generate OTP route
 async function GenerateOtp(req, res) {
@@ -34,7 +33,7 @@ async function candidateSignup(req, res) {
       password: securePassword,
     })
     const id = user.id
-    const authtoken = jwt.sign(id, JWT_SECRET)
+    const authtoken = jwt.sign(id, process.env.JWT_SECRET)
     return res.status(200).send({ authtoken })
   } catch (error) {
     console.log(error)
@@ -53,7 +52,7 @@ async function candidateSignin(req, res) {
       )
       if (passwordCompare) {
         const id = user.id
-        const authtoken = jwt.sign(id, JWT_SECRET)
+        const authtoken = jwt.sign(id, process.env.JWT_SECRET)
         return res.status(200).send({ authtoken })
       }
       return res.status(400).send({ error: 'Invalid Credential' })
@@ -80,7 +79,7 @@ async function companySignup(req, res) {
       password: securePassword,
     })
     const id = user.id
-    const authtoken = jwt.sign(id, JWT_SECRET)
+    const authtoken = jwt.sign(id, process.env.JWT_SECRET)
     return res.status(200).send({ authtoken })
   } catch (error) {
     console.log(error)
@@ -99,7 +98,7 @@ async function companySignin(req, res) {
       )
       if (passwordCompare) {
         const id = user.id
-        const authtoken = jwt.sign(id, JWT_SECRET)
+        const authtoken = jwt.sign(id, process.env.JWT_SECRET)
         return res.status(200).send({ authtoken })
       }
       return res.status(400).send({ error: 'Invalid Credential' })
