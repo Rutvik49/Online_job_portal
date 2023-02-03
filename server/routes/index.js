@@ -4,7 +4,9 @@ const {
   companySignin,
   candidateSignup,
   candidateSignin,
-  candidateBio,
+  addCandidateBio,
+  getCandidateBio,
+  updateCandidateBio,
   GenerateOtp,
 } = require('../controllers')
 const router = express.Router()
@@ -15,6 +17,8 @@ router.post('/auth/candidatesignup', VerifyOtp, candidateSignup)
 router.post('/auth/candidatesignin', candidateSignin)
 router.post('/auth/companysignup', VerifyOtp, companySignup)
 router.post('/auth/companysignin', companySignin)
-router.post('/candidatebio', validate, candidateBio)
+router.post('/addcandidatebio', validate, addCandidateBio)
+router.get('/getcandidatebio', validate, getCandidateBio)
+router.put('/updatecandidatebio', validate, updateCandidateBio)
 
 module.exports = router

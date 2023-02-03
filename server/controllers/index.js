@@ -110,8 +110,8 @@ async function companySignin(req, res) {
   }
 }
 
-//  create Candidate bio route
-async function candidateBio(req, res) {
+//  Create Candidate Bio route
+async function addCandidateBio(req, res) {
   try {
     let userBio = await CANDIDATE_BIO.findOne({ username: req.body.username })
     if (userBio) {
@@ -123,10 +123,41 @@ async function candidateBio(req, res) {
       username: req.body.username,
       bio: req.body.bio
     })
-    return res.status(200).send({ status : "Bio Updated Successfully"})
+    return res.status(200).send({ status : "Bio Added Successfully"})
     
   } catch (error) {
     return res.status(500).send({ error: 'Failed To Add Bio' })
+  }
+}
+
+//  Get Candidate Bio route
+async function getCandidateBio(req, res) {
+  try {
+    let userBio = await CANDIDATE_BIO.findById(req.body.id)
+    if (userBio) {
+      return res.status(200).send({ status : 'success', userBio})
+    }
+    return res.status(500).send({ error: 'Failed To Fetch Candidate Bio' })
+  } catch (error) {
+    return res.status(500).send({ error: 'Failed To Add Bio' })
+  }
+}
+
+//  Update Candidate Bio route
+async function updateCandidateBio(req, res) {
+  let {profile, bio} = req.body
+  let updateBio = {}
+  if(profile){ updateBio.profile = profile}
+  if(bio){ updateBio.bio = bio}
+  try {
+    let userBio = await CANDIDATE_BIO.findById(req.body.id)
+    if (userBio) {
+      let update = await CANDIDATE_BIO.findByIdAndUpdate(userBio.id, {$set : updateBio}, {new : true})
+      return res.status(200).send({ status : 'success', update})
+    }
+    return res.status(500).send({ error: 'Failed To Update Candidate Bio' })
+  } catch (error) {
+    return res.status(500).send({ error: 'Failed To Update Candidate Bio' })
   }
 }
 
@@ -135,6 +166,8 @@ module.exports = {
   companySignin,
   candidateSignup,
   candidateSignin,
-  candidateBio,
+  addCandidateBio,
+  getCandidateBio,
+  updateCandidateBio,
   GenerateOtp,
 }
