@@ -1,18 +1,17 @@
 const nodemailer = require("nodemailer");
 
 async function sendMail(otp) {
-  let testAccount = await nodemailer.createTestAccount();
   let transporter = nodemailer.createTransport({
-    host: "smtp.ethereal.email",
-    port: 587,
+    host: "smtp.elasticemail.com",
+    port: 2525,
     auth: {
-      user: "julio93@ethereal.email",
-      pass: "G1s1EeP6tQEPfwZbEK",
+      user: "onlinejobportal@gmail.com",
+      pass: "2C2D136A677898414C895135DDC214D9D56D",
     },
   });
   let info = await transporter.sendMail({
-    from: '"Fred Foo 👻" <foo@example.com>',
-    to: "bar@example.com, hello@gmail.com",
+    from: 'onlinejobportal@gmail.com',
+    to: "haakarr01@gmail.com",
     subject: "Hello ✔",
     text: otp,
     // html: "<b>`${otp}`</b>",

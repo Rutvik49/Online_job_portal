@@ -1,5 +1,6 @@
 const CANDIDATE = require('../models/Candidate.model')
 const COMPANY = require('../models/Company.model')
+const CANDIDATE_BIO = require('../models/Candidate_Bio.model')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const otp_generator = require('otp-generator')
@@ -109,10 +110,31 @@ async function companySignin(req, res) {
   }
 }
 
+//  create Candidate bio route
+async function candidateBio(req, res) {
+  try {
+    let userBio = await CANDIDATE_BIO.findOne({ username: req.body.username })
+    if (userBio) {
+      return res.status(500).send({ error: 'Username Already Exists' })
+    }
+    userBio = await CANDIDATE_BIO.create({
+      _id: req.body.id,
+      profile: req.body.profile,
+      username: req.body.username,
+      bio: req.body.bio
+    })
+    return res.status(200).send({ status : "Bio Updated Successfully"})
+    
+  } catch (error) {
+    return res.status(500).send({ error: 'Failed To Add Bio' })
+  }
+}
+
 module.exports = {
   companySignup,
   companySignin,
   candidateSignup,
   candidateSignin,
+  candidateBio,
   GenerateOtp,
 }
