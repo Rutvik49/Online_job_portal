@@ -10,6 +10,9 @@ const {
   addCompanyBio,
   getCompanyBio,
   updateCompanyBio,
+  addCandidateCV,
+  getCandidateCV,
+  updateCandidateCV,
   GenerateOtp,
 } = require('../controllers')
 const router = express.Router()
@@ -30,5 +33,8 @@ router.put('/updatecandidatebio', validate, updateCandidateBio)
 router.post('/addcompanybio', validate, addCompanyBio)
 router.get('/getcompanybio', validate, getCompanyBio)
 router.put('/updatecompanybio', validate, updateCompanyBio)
+router.post('/addcandidatecv', validate, addCandidateCV)
+router.get('/getcandidatecv', validate, getCandidateCV)
+router.put('/updatecandidatecv', validate, updateCandidateCV)
 
 module.exports = router
