@@ -2,6 +2,7 @@ const CANDIDATE = require('../models/Candidate.model')
 const COMPANY = require('../models/Company.model')
 const CANDIDATE_BIO = require('../models/Candidate_Bio.model')
 const COMPANY_BIO = require('../models/Company_Bio.model')
+const CANDIDATE_CV = require('../models/Candidate_CV.model')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const otp_generator = require('otp-generator')
@@ -238,6 +239,99 @@ async function updateCompanyBio(req, res) {
   }
 }
 
+// Create Candidate CV route
+async function addCandidateCV(req, res) {
+  try {
+    let cv = await CANDIDATE_CV.findOne({ _id: req.body.id })
+    if (cv) {
+      return res.status(500).send({ error: 'Invalid Access' })
+    }
+    cv = await CANDIDATE_CV.create({
+      _id: req.body.id,
+      education: req.body.education,
+      skills: req.body.skills,
+      projects: req.body.projects,
+      github_link: req.body.github_link,
+      experience: req.body.experience,
+      company_name: req.body.company_name,
+      company_website: req.body.company_website,
+      working_role: req.body.working_role,
+      time_spend: req.body.time_spend,
+    })
+    return res.status(200).send({ status: 'CV Added Successfully' })
+  } catch (error) {
+    console.log(error)
+    return res.status(500).send({ error: 'Failed To Create CV' })
+  }
+}
+
+//Get Candidate CV route
+async function getCandidateCV(req, res) {
+  try {
+    let cv = await CANDIDATE_CV.findById(req.body.id)
+    if (cv) {
+      return res.status(200).send({ status: 'success', cv })
+    }
+    return res.status(404).send({ error: 'CV Not Found' })
+  } catch (error) {
+    return res.status(500).send({ error: 'Internal Server Error' })
+  }
+}
+
+//Update Candidate CV route
+async function updateCandidateCV(req, res) {
+  let {
+    education,
+    skills,
+    projects,
+    github_link,
+    experience,
+    company_name,
+    company_website,
+    working_role,
+    time_spend,
+  } = req.body
+  let updateCV = {}
+  if (skills) {
+    updateCV.skills = skills
+  }
+  if (projects) {
+    updateCV.projects = projects
+  }
+  if (github_link) {
+    updateCV.github_link = github_link
+  }
+  if (experience) {
+    updateCV.experience = experience
+  }
+  if (company_name) {
+    updateCV.company_name = company_name
+  }
+  if (company_website) {
+    updateCV.company_website = company_website
+  }
+  if (working_role) {
+    updateCV.working_role = working_role
+  }
+  if (time_spend) {
+    updateCV.time_spend = time_spend
+  }
+  try {
+    let cv = await CANDIDATE_CV.findById(req.body.id)
+    if (cv) {
+      let update = await CANDIDATE_CV.findByIdAndUpdate(
+        cv.id,
+        { $set: updateCV },
+        { new: true },
+      )
+      return res.status(200).send({ status: 'success', update })
+    }
+    return res.status(400).send({ error: 'Invalid Candidate' })
+  } catch (error) {
+    return res.status(500).send({ error: 'Failed To Update CV' })
+  }
+}
+
 module.exports = {
   companySignup,
   companySignin,
@@ -246,6 +340,9 @@ module.exports = {
   addCandidateBio,
   getCandidateBio,
   updateCandidateBio,
+  addCandidateCV,
+  getCandidateCV,
+  updateCandidateCV,
   addCompanyBio,
   getCompanyBio,
   updateCompanyBio,
