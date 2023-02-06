@@ -366,9 +366,9 @@ async function deleteJob(req, res) {
       job.delete()
       return res.status(200).send({ status: 'Job Deleted Successfully' })
     }
-    return res.status(400).send({ error: 'Job Already Deleted' })
+    return res.status(400).send({ error: 'Job Not Found' })
   } catch (error) {
-    return res.status(500).send({ error: 'Failed To Delet Job' })
+    return res.status(500).send({ error: 'Failed To Delete Job' })
   }
 }
 
