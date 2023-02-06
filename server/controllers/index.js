@@ -3,6 +3,7 @@ const COMPANY = require('../models/Company.model')
 const CANDIDATE_BIO = require('../models/Candidate_Bio.model')
 const COMPANY_BIO = require('../models/Company_Bio.model')
 const CANDIDATE_CV = require('../models/Candidate_CV.model')
+const POST_JOB = require('../models/Post_job.model')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const otp_generator = require('otp-generator')
@@ -332,6 +333,45 @@ async function updateCandidateCV(req, res) {
   }
 }
 
+//Post Job route
+async function postJob(req, res) {
+  try {
+    let company = await COMPANY.findOne({ company_name: req.body.company_name })
+    if (company) {
+      job = await POST_JOB.create({
+        company_name: req.body.company_name,
+        job_role: req.body.job_role,
+        require_skills: req.body.require_skills,
+        job_description: req.body.job_description,
+        min_salary: req.body.min_salary,
+        max_salary: req.body.max_salary,
+      })
+      return res.status(200).send({ status: 'Job Posted Successfully' })
+    }
+    return res.status(500).send({ error: 'Invalid Company Name' })
+  } catch (error) {
+    console.log(error)
+    return res.status(500).send({ error: 'Failed To Post Job' })
+  }
+}
+
+// Delete Job route
+async function deleteJob(req, res) {
+  try {
+    let job = await POST_JOB.findOne({
+      company_name: req.body.company_name,
+      job_role: req.body.job_role,
+    })
+    if (job) {
+      job.delete()
+      return res.status(200).send({ status: 'Job Deleted Successfully' })
+    }
+    return res.status(400).send({ error: 'Job Not Found' })
+  } catch (error) {
+    return res.status(500).send({ error: 'Failed To Delete Job' })
+  }
+}
+
 module.exports = {
   companySignup,
   companySignin,
@@ -346,5 +386,7 @@ module.exports = {
   addCompanyBio,
   getCompanyBio,
   updateCompanyBio,
+  postJob,
+  deleteJob,
   GenerateOtp,
 }
