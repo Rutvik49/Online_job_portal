@@ -1,8 +1,10 @@
-
+import GetStarted from "./features/getStarted";
+import SignUp from "./features/candidate/auth/signUp";
 function App() {
   return (
     <div className="App">
-      <h1>hello all !</h1>
+      {/* <SignUp/> */}
+      <GetStarted/>
     </div>
   );
 }

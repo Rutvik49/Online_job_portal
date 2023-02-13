@@ -16,7 +16,7 @@ async function GenerateOtp(req, res) {
     upperCaseAlphabets: false,
     specialChars: false,
   })
-  sendMail(req.app.locals.OTP)
+  // sendMail(req.app.locals.OTP)
   return res.status(201).send({ OTP: req.app.locals.OTP })
 }
 
