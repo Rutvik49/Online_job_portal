@@ -43,6 +43,7 @@ export const Start = styled.div`
     background-color: #3661ce;
     border: 1px solid blue;
     margin-top: 5%;
+    cursor: pointer;
   }
   .body img {
     height: 70vh;

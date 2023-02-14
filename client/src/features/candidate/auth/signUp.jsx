@@ -1,11 +1,10 @@
 import React from 'react'
-import { Signup } from './style'
-import './style.js'
+import { Style } from '../../../components/style'
+import { Link } from 'react-router-dom'
 
-const SignUp = () => {
+const CandidateSignUp = () => {
   return (
-    <>
-      <Signup className="container">
+      <Style>
         <div className="head">
           <img src="images/logo.svg" alt="" />
           <span className="welcome">Welcome To Online Job Portal</span>
@@ -34,10 +33,10 @@ const SignUp = () => {
             <button className="otp">Send OTP</button>
           </div>
           <button type="submit" className='submit'>Sign Up</button>
+          <span className='goto'>already Signed Up ? : <Link to = '/SignIn'>Sign In</Link></span>
         </div>
-      </Signup>
-    </>
+      </Style>
   )
 }
 
-export default SignUp
+export default CandidateSignUp

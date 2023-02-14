@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Signup = styled.div`
+export const Style = styled.div`
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   background-color: #f7f7f7;
   display: flex;
@@ -33,7 +33,7 @@ export const Signup = styled.div`
     border-top: 1px solid #3661ce;
   }
   .card {
-    margin-top: 125px;
+    margin-top : 12%;
     display: flex;
     width: 35vw;
     flex-direction: column;
@@ -87,13 +87,14 @@ export const Signup = styled.div`
     border: 1px solid #3661ce;
     border-left: 0px;
     border-radius: 0px 5px 5px 0px;
-    padding: 7px 25px;
+    padding: 10px 25px;
     background-color: #073dc4;
+    font-size: 0.6em;
     color: #f7f7f7;
+    cursor: pointer;
   }
   .submit {
-    margin-top: 4%;
-    margin-bottom: 4%;
+    margin : 4% auto;
     height: 6vh;
     width: 100%;
     border-radius: 5px;
@@ -101,8 +102,11 @@ export const Signup = styled.div`
     background-color: #073dc4;
     color: #f7f7f7;
     font-size: 1rem;
+    cursor: pointer;
   }
-  .submit:onclick{
-    background-color: white;
+  .goto{
+    width : 100%;
+    margin-bottom : 4%;
+    text-align: right;
   }
 `
