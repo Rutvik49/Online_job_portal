@@ -1,10 +1,16 @@
-import React from "react";
-import Navbar from "./Navbar";
+import React from 'react'
+import Navbar from '../Navbar'
+import ProfileCard from '../../../components/ProfileCard'
+import RecomandJob from './RecomandJob'
 
 const Index = () => {
-  return <div>
-    <Navbar/>
-  </div>;
-};
+  return (
+    <>
+      <Navbar />
+      <ProfileCard />
+      <RecomandJob />
+    </>
+  )
+}
 
-export default Index;
+export default Index
