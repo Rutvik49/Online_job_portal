@@ -1,5 +1,5 @@
 import React from 'react'
-import { Style } from './style'
+import { Style } from './authStyle'
 import { Link, useNavigate } from 'react-router-dom'
 
 const Signin = (props) => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Style } from '../../../components/style'
+import { Style } from '../../../components/authStyle'
 import { Link } from 'react-router-dom'
 
 const CandidateSignUp = () => {
