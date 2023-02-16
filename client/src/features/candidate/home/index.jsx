@@ -7,7 +7,7 @@ const Index = () => {
   return (
     <>
       <Navbar />
-      <ProfileCard />
+      <ProfileCard name='rajat chaudhary' role='mern developer' location='ahmedabad' bio='i am a expert mern developer' />
       <RecomandJob />
     </>
   )

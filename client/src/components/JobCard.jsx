@@ -1,5 +1,5 @@
 import React from 'react'
-import { JobcardStyle } from './JobcardStyle'
+import { JobcardStyle } from './style/JobcardStyle'
 
 const JobCard = () => {
   return (
@@ -7,7 +7,7 @@ const JobCard = () => {
       <div className="container">
         <img src="" alt="Profile" />
         <div className="discription">
-          <span className="job_role">Pyton Developer</span>
+          <span className="job_role">Python Developer</span>
           <span className="name">google</span>
           <span className="location">Gandhinagar</span>
           <span className="salary">Salary : 2k to 10k $</span>

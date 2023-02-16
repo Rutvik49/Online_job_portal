@@ -1,5 +1,5 @@
 import GetStarted from './features/getStarted'
-import ProtectedRoutes from './features/ProtectedRoute'
+import ProtectedRoutes from './ProtectedRoute'
 import CandidateSignUp from './features/candidate/auth/SignUp'
 import CandidateHome from './features/candidate/home'
 import CompanySignUp from './features/company/auth/SignUp'

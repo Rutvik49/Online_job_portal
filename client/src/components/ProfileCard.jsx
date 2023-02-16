@@ -1,15 +1,16 @@
 import React from "react";
-import {NavStyle} from'./ProfileStyle'
+import {NavStyle} from'./style/ProfileStyle'
 
-const ProfileCard = () => {
-  return <NavStyle>
+const ProfileCard = (props) => {
+  let top=props.top
+  return <NavStyle style={{ marginTop: top}}>
   <div className="container">
     <img src="" alt="Profiel" />
     <div className="discription">
-        <span className="name">Chaudhary Rutvik</span>
-        <span className="workingdomain">MERN Developer</span>
-        <span className="location">Gandhinagar</span>
-        <span className="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus nihil fugit laudantium recusandae cupiditate. Molestias, architecto. Non sit, aperiam cum nam suscipit officiis?</span>
+        <span className="name">{props.name}</span>
+        <span className="role site">{props.role}</span>
+        <span className="location">{props.location}</span>
+        <span className="bio">{props.bio}</span>
     </div>
     <span className="viewProfile">View Profile</span>
   </div>

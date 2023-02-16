@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
-export const JobcardStyle = styled.div`
-  display: block;
+export const NavStyle = styled.div`
+  margin-top: 7%;
   width: 100%;
   .container {
     background-color: #f3f7ff;
@@ -14,11 +14,6 @@ export const JobcardStyle = styled.div`
     display: flex;
     justify-content: center;
   }
-  hr {
-    border-top: 1px solid #f9f7ff;
-    margin: auto;
-    width: 70vw;
-  }
   img {
     width: 20%;
   }
@@ -28,12 +23,12 @@ export const JobcardStyle = styled.div`
     flex-direction: column;
     color: #073dc4;
   }
-  .job_role {
+  .name {
     margin-top: 1%;
     font-size: 1.3rem;
     font-weight: 550;
   }
-  .name {
+  .role {
     margin-top: 1%;
     font-size: 1.1rem;
     font-weight: 500;
@@ -44,24 +39,38 @@ export const JobcardStyle = styled.div`
     font-weight: 500;
     color: #5e7ac2;
   }
-  .salary {
+  .bio {
     margin-top: 2%;
-    margin-bottom: 2%;
     font-size: 0.9rem;
     font-weight: 400;
   }
-  .apply {
+  .viewProfile {
+    margin-top: 1%;
+    font-size: 0.8rem;
+    color: #073dc4;
+    text-decoration: underline;
     width: 20%;
+    text-align: right;
   }
-  button {
-    margin: 2% 0px;
-    background-color: #073dc4;
-    color: #f3f7ff;
-    cursor: pointer;
-    outline: none;
-    border: 1px solid #073dc4;
-    border-radius: 7px;
-    height: 20%;
-    width: 65%;
+  @media (max-width: 820px) {
+    margin-top: 10vh;
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .discription {
+      margin: 1.5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .viewProfile {
+      margin-top: 1%;
+      text-align: center;
+    }
   }
 `

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Start } from './starterStyle'
+import { Start } from '../components/style/starterStyle'
 
 const getStarted = () => {
   return (

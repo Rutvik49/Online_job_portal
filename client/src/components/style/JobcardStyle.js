@@ -1,10 +1,9 @@
 import styled from 'styled-components'
 
-export const NavStyle = styled.div`
-  // position: absolute;
-  // position: relative;
-  margin-top: 7%;
+export const JobcardStyle = styled.div`
+  display: block;
   width: 100%;
+  margin-top:1%;
   .container {
     background-color: #f3f7ff;
     font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
@@ -16,6 +15,11 @@ export const NavStyle = styled.div`
     display: flex;
     justify-content: center;
   }
+  hr {
+    border-top: 1px solid #f9f7ff;
+    margin: auto;
+    width: 70vw;
+  }
   img {
     width: 20%;
   }
@@ -25,12 +29,12 @@ export const NavStyle = styled.div`
     flex-direction: column;
     color: #073dc4;
   }
-  .name {
+  .job_role {
     margin-top: 1%;
     font-size: 1.3rem;
     font-weight: 550;
   }
-  .workingdomain {
+  .name {
     margin-top: 1%;
     font-size: 1.1rem;
     font-weight: 500;
@@ -41,21 +45,27 @@ export const NavStyle = styled.div`
     font-weight: 500;
     color: #5e7ac2;
   }
-  .bio {
+  .salary {
     margin-top: 2%;
+    margin-bottom: 2%;
     font-size: 0.9rem;
     font-weight: 400;
   }
-  .viewProfile {
-    margin-top: 1%;
-    font-size: 0.8rem;
-    color: #073dc4;
-    text-decoration: underline;
+  .apply {
     width: 20%;
-    text-align: right;
+  }
+  button {
+    margin: 2% 0px;
+    background-color: #073dc4;
+    color: #f3f7ff;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid #073dc4;
+    border-radius: 7px;
+    height: 20%;
+    width: 65%;
   }
   @media (max-width: 820px) {
-    margin-top: 10vh;
     .container {
       display: flex;
       flex-direction: column;
@@ -63,11 +73,17 @@ export const NavStyle = styled.div`
       align-items: center;
     }
     .discription {
-      margin: 1.5%;
-    }
-    .viewProfile {
-      margin-top: 1%;
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      color: #073dc4;
+      align-items: center;
       text-align: center;
+    }
+    .job_role {
+      margin-top: 1%;
+      font-size: 1rem;
+      font-weight: 550;
     }
   }
 `
