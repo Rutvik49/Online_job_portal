@@ -1,5 +1,5 @@
 import React from "react";
-import {NavStyle} from '../../components/navStyle'
+import {NavStyle} from '../../components/style/navStyle'
 const Navbar = () => {
   return <NavStyle>
         <img src="images/logo.svg" alt="" />

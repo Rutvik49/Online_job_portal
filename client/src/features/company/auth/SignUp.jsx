@@ -1,5 +1,5 @@
 import React from 'react'
-import { Style } from '../../../components/authStyle'
+import { Style } from '../../../components/style/authStyle'
 import { Link } from 'react-router-dom'
 
 const CompanySignUp = () => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Role } from './role.js'
+import { Role } from '../components/style/roleStyle.js'
 
 const SelectRole = () => {
   return (
