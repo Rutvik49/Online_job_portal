@@ -31,7 +31,7 @@ export const JobcardStyle = styled.div`
   }
   .job_role {
     margin-top: 1%;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 550;
   }
   .name {
