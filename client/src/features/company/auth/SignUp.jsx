@@ -6,9 +6,8 @@ const CompanySignUp = () => {
   return (
     <Style>
       <div className="head">
-        <img src="images/logo.svg" alt="" />
+        <img src="images/logo.svg" alt="logo" className='logo' />
         <span className="welcome">Welcome To Online Job Portal</span>
-        <hr />
       </div>
       <div className="card">
         <span className="signup">Let's Have Onbord...</span>
@@ -29,6 +28,7 @@ const CompanySignUp = () => {
           <button className="otp">Send OTP</button>
         </div>
         <button type="submit" className="submit">
+        <Link to="/CompanyHome">Sign Up</Link> 
           Sign Up
         </button>
         <span className="goto">

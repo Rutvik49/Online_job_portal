@@ -5,7 +5,7 @@ export const RecomandJobStyle = styled.div`
   background-color: #f3f7ff;
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   width: 70%;
-  min-height: 15vh;
+  min-height: 13vh;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@ export const RecomandJobStyle = styled.div`
   box-shadow: 0px 10px 10px -16px #111;
   .s1 {
     color: #073dc4;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 550;
   }
   .s2 {

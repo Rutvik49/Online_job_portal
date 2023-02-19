@@ -6,9 +6,8 @@ const CandidateSignUp = () => {
   return (
       <Style>
         <div className="head">
-          <img src="images/logo.svg" alt="" />
+          <img src="images/logo.svg" className='logo'  alt="logo" />
           <span className="welcome">Welcome To Online Job Portal</span>
-          <hr />
         </div>
         <div className="card">
           <span className="signup">Let's Have Onbord...</span>
@@ -32,7 +31,7 @@ const CandidateSignUp = () => {
             <input className="otpinp" type="number" name="otp" id="fn" />
             <button className="otp">Send OTP</button>
           </div>
-          <button type="submit" className='submit'>Sign Up</button>
+          <button type="submit" className='submit'><Link to="/candidatebio">candidatebio</Link>Sign Up</button>
           <span className='goto'>already Signed Up ? : <Link to = '/SignIn'>Sign In</Link></span>
         </div>
       </Style>

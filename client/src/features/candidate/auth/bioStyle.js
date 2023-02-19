@@ -1,40 +1,40 @@
 import styled from 'styled-components'
 
 export const Style = styled.div`
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   background-color: #f7f7f7;
   display: flex;
   min-height: 100vh;
   align-items: center;
   flex-direction: column;
 
-  .head {
+.head {
     display: flex;
     width: 100%;
     justify-content: center;
     flex-direction: column;
     background-color: #e8edff;
-    // background-color: #f7f7f7;
     position: fixed;
-    z-index : 1;
     box-shadow: 0px 10px 10px -15px #111;
   }
-  .logo {
-    height : 100%;
+  img {
+    padding-top : 1%;
     margin-top: 12px;
     width: 15vw;
     margin: auto;
-    padding-top: 0.2%;
   }
   .welcome {
     font-size: 1.7rem;
     color: #2150c9;
     margin: auto;
-    text-align : center;
+  }
+  hr {
+    width: 80%;
+    margin: auto;
+    border-top: 1px solid #3661ce;
   }
   .card {
-    position : relative;
-    margin-top : 12%;
+    margin-top : 10%;
     display: flex;
     width: 35vw;
     flex-direction: column;
@@ -45,51 +45,41 @@ export const Style = styled.div`
     font-weight: bold;
     color: #3661ce;
     margin: auto;
+    padding-bottom : 3%;
   }
-  label,
-  input,
-  select {
+  .profile{
+    margin: auto;
+    height: 120px;
+    width: 120px;
+    border: 1px solid #3661ce;
+    border-radius: 50%;
+    color: transparent;
+  }
+  .upload{
+    display: none;
+  }
+  .username, .bio{
+    align-items: flex-start;
     color: #073dc4;
     width: 100%;
-  }
-  input {
-    padding-left: 1%;
-  }
-  input,
-  select {
     height: 6vh;
+    margin-top: 4%;
+  }
+  #un, #cb, #bio{
+    height: 6vh;
+    width: 100%;
+    padding-left: 1%;
     font-size: 1rem;
     outline: none;
     border: 1px solid #3661ce;
     color: #022c94;
     border-radius: 5px;
+    margin-top: -10px;
   }
-  input:focus,
-  select:focus {
-    box-shadow: 1px 1px 3px #3661ce;
-    background-color: #f3f7ff;
-  }
-  label {
-    margin-top: 4%;
-  }
-  .otp {
-    display: flex;
-    width: 100%;
-  }
-  .otpinp {
-    border-radius: 5px 0px 0px 5px;
-    width: 100%;
-  }
-  .otp button {
-    width: 40%;
-    border: 1px solid #3661ce;
-    border-left: 0px;
-    border-radius: 0px 5px 5px 0px;
-    padding: 10px 25px;
-    background-color: #073dc4;
-    font-size: 0.6em;
-    color: #f7f7f7;
-    cursor: pointer;
+  #bio{
+    height: 15vh;
+    overflow: hidden;
+    resize: none;
   }
   .submit {
     margin : 4% auto;
@@ -101,10 +91,4 @@ export const Style = styled.div`
     color: #f7f7f7;
     font-size: 1rem;
     cursor: pointer;
-  }
-  .goto{
-    width : 100%;
-    margin-bottom : 4%;
-    text-align: right;
-  }
-`
+  }`
