@@ -4,12 +4,15 @@ import CandidateSignUp from './features/candidate/auth/SignUp'
 import CandidateBio from './features/candidate/auth/candidateBio'
 import CandidateCV from './features/candidate/auth/candidateCV'
 import CandidateHome from './features/candidate/home'
+import Jobs from './features/candidate/Jobs'
 import CompanySignUp from './features/company/auth/SignUp'
 import CompanyBio from './features/company/auth/companyBio'
 import CompanyHome from './features/company/home'
+import TEmp from './features/company/talentedEmployee'
 import SignIn from './components/SignIn'
 import SelectRole from './features/selectRole'
 import {  Route, Routes, BrowserRouter } from 'react-router-dom'
+import './App.css'
 
 function App() {
   return (
@@ -26,7 +29,9 @@ function App() {
             <Route exact path="/SignIn" element={<SignIn />} />
             <Route exact path="/CompanyBio" element={<CompanyBio />} />
             <Route exact path="/CandidateHome" element={<CandidateHome />} />
+            <Route exact path="/Jobs" element={<Jobs />} />
             <Route exact path="/CompanyHome" element={<CompanyHome />} />
+            <Route exact path="/TEmp" element={<TEmp />} />
           </Route>
         </Routes>
       </BrowserRouter>
