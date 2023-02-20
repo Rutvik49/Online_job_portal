@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const RecomandJobStyle = styled.div`
-  // display: block;
   background-color: #f3f7ff;
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   width: 70%;
