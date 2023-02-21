@@ -81,7 +81,12 @@ export const Style = styled.div`
     overflow: hidden;
     resize: none;
   }
-  .submit {
+  .link{
+    width: 100%;
+  }
+  .link .submit {
+    text-decoration: none;
+    color: #f7f7f7;
     margin : 4% auto;
     height: 6vh;
     width: 100%;

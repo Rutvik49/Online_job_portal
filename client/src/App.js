@@ -5,6 +5,7 @@ import CandidateBio from './features/candidate/auth/candidateBio'
 import CandidateCV from './features/candidate/auth/candidateCV'
 import CandidateHome from './features/candidate/home'
 import Jobs from './features/candidate/Jobs'
+import Profile from './features/candidate/profile'
 import CompanySignUp from './features/company/auth/SignUp'
 import CompanyBio from './features/company/auth/companyBio'
 import CompanyHome from './features/company/home'
@@ -29,6 +30,7 @@ function App() {
             <Route exact path="/SignIn" element={<SignIn />} />
             <Route exact path="/CompanyBio" element={<CompanyBio />} />
             <Route exact path="/CandidateHome" element={<CandidateHome />} />
+            <Route exact path="/CandidateProfile" element={<Profile />} />
             <Route exact path="/Jobs" element={<Jobs />} />
             <Route exact path="/CompanyHome" element={<CompanyHome />} />
             <Route exact path="/TEmp" element={<TEmp />} />
