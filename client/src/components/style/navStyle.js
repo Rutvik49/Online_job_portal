@@ -25,14 +25,16 @@ export const NavStyle = styled.div`
     padding-right: 8px;
   }
   li {
-    margin: 2% 1.5%;
     list-style: none;
-    // color: #073dc4;
     color: #00288d;
     cursor: pointer;
   }
   li:hover {
     color: blue;
+  }
+  .link{
+    margin: 2% 1.5%;
+    text-decoration: none;
   }
   li input {
     border: 1px solid #073dc4;

@@ -17,7 +17,10 @@ const CandidateBio = () => {
         <input type="text" name="username" id="un" />
         <label for="bio" className='bio'>Describe Yourself :</label>
         <textarea type="textarea" name="bio" id="bio" />
-        <button type="submit" className='submit'><Link to="/"></Link>Next</button>
+        <Link to="/candidateCV" className='link'>
+        <button type="submit" className='submit'>Next
+        </button>
+        </Link>
       </div>
     </Style>
   )
