@@ -1,7 +1,9 @@
 import React from "react";
 import {NavStyle} from '../../components/style/navStyle'
 const Navbar = () => {
-  return <NavStyle>
+  // style={{height: '13vh', display: 'block'}}
+  return <div className="main" >
+    <NavStyle >
         <img src="images/logo.svg" alt="" />
     <ul>
         <li><input type="text" name="search" id="search" placeholder="Search"/></li>
@@ -12,6 +14,7 @@ const Navbar = () => {
         <li>Profile</li>
     </ul>
   </NavStyle>;
+    </div>
 };
 
 export default Navbar;

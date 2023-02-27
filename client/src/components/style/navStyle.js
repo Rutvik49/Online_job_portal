@@ -22,12 +22,13 @@ export const NavStyle = styled.div`
     justify-content: flex-end;
     flex-wrap: nowrap;
     align-items: center;
-    padding-right: 8px;
+    padding-right: 18px;
   }
   li {
     list-style: none;
     color: #00288d;
     cursor: pointer;
+    margin-left: 20px;
   }
   li:hover {
     color: blue;
