@@ -61,7 +61,7 @@ export const JobcardStyle = styled.div`
     cursor: pointer;
     outline: none;
     border: 1px solid #073dc4;
-    border-radius: 7px;
+    border-radius: 4px;
     height: 20%;
     width: 65%;
   }
