@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const Company_Bio_Schema = new mongoose.Schema({
-  _id: {
+  companyID: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
     unique: true,

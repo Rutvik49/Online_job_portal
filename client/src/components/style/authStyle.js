@@ -34,7 +34,7 @@ export const Style = styled.div`
   }
   .card {
     position : relative;
-    margin-top : 12%;
+    margin-top : 10%;
     display: flex;
     width: 35vw;
     flex-direction: column;
@@ -81,15 +81,16 @@ export const Style = styled.div`
     width: 100%;
   }
   .otp button {
-    width: 40%;
     border: 1px solid #3661ce;
     border-left: 0px;
     border-radius: 0px 5px 5px 0px;
-    padding: 10px 25px;
     background-color: #073dc4;
-    font-size: 0.6em;
+    font-size: 0.9em;
     color: #f7f7f7;
     cursor: pointer;
+    padding: 8px 5px;
+    width: 40%;
+    white-space: nowrap;
   }
   .submit {
     margin : 4% auto;

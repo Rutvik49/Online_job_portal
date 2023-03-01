@@ -1,8 +1,7 @@
 import React from 'react'
-import { JobcardStyle } from './style/JobcardStyle'
+import { JobcardStyle, Style } from './style/JobcardStyle'
 import Popup from 'reactjs-popup'
 import 'reactjs-popup/dist/index.css'
-import {Style} from'./popupStyle.js'
 
 const JobCard = () => {
   return (
@@ -16,7 +15,12 @@ const JobCard = () => {
           <span className="salary">Salary : 2k to 10k $</span>
         </div>
         <div className="apply">
-          <Popup trigger={<button>Apply</button>} modal nested contentStyle={{borderRadius:'10px'}}>
+          <Popup
+            trigger={<button>Apply</button>}
+            modal
+            nested
+            contentStyle={{ borderRadius: '10px' }}
+          >
             {(close) => (
               <div className="modal">
                 <Style className="content">
@@ -48,8 +52,10 @@ const JobCard = () => {
                       placeholder="Write a note to Recuriter"
                     />
                     <div className="buttons">
-                      <span onClick={() => close()} className='cancel' >Cancel</span>
-                      <button className='send'>Send Application</button>
+                      <span onClick={() => close()} className="cancel">
+                        Cancel
+                      </span>
+                      <button className="send">Send Application</button>
                     </div>
                   </div>
                 </Style>

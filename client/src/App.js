@@ -11,6 +11,7 @@ import CompanySignUp from './features/company/auth/SignUp'
 import CompanyBio from './features/company/auth/companyBio'
 import CompanyHome from './features/company/home'
 import TEmp from './features/company/talentedEmployee'
+import JobApplication from './features/company/jobApplication'
 import SignIn from './components/SignIn'
 import SelectRole from './features/selectRole'
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
@@ -26,14 +27,14 @@ function App() {
           <Route element={<ProtectedRoutes />}>
             <Route
               exact
-              path="/selectrole/CandidateSignUp"
+              path="/CandidateSignUp"
               element={<CandidateSignUp />}
             />
             <Route exact path="/CandidateBio" element={<CandidateBio />} />
             <Route exact path="/CandidateCV" element={<CandidateCV />} />
             <Route
               exact
-              path="/selectrole/CompanySignUp"
+              path="/CompanySignUp"
               element={<CompanySignUp />}
             />
             <Route exact path="/SignIn" element={<SignIn />} />
@@ -42,8 +43,9 @@ function App() {
             <Route exact path="/CandidateProfile" element={<Profile />} />
             <Route exact path="/Jobs" element={<Jobs />} />
             <Route exact path="/CompanyHome" element={<CompanyHome />} />
-            <Route exact path="/TEmp" element={<TEmp />} />
+            <Route exact path="/TalentedEmployees" element={<TEmp />} />
             <Route exact path="/CompanyProfile" element={<CompanyProfile />} />
+            <Route exact path="/JobApplication" element={<JobApplication />} />
           </Route>
         </Routes>
       </BrowserRouter>
