@@ -1,8 +1,7 @@
 import React from 'react'
-import { Style } from './style.js'
+import { Style,CardStyle } from './style.js'
 import Popup from 'reactjs-popup'
 import 'reactjs-popup/dist/index.css'
-import { CardStyle } from './popupStyle.js'
 
 const Profile = () => {
   return (

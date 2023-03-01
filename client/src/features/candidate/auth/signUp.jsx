@@ -29,7 +29,7 @@ const CandidateSignUp = () => {
           <label for="otp">Enter OTP :</label>
           <div className="otp">
             <input className="otpinp" type="number" name="otp" id="fn" />
-            <button className="otp">Send OTP</button>
+            <button className="sendotp">Send OTP</button>
           </div>
           <button type="submit" className='submit'><Link to="/candidatebio">candidatebio</Link>Sign Up</button>
           <span className='goto'>already Signed Up ? : <Link to = '/SignIn'>Sign In</Link></span>

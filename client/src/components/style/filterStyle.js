@@ -34,8 +34,13 @@ button {
   border-radius: 5px;
   width:13%;
   border: 1px solid #3661ce;
-  background-color: #073dc4;
-  color: #f7f7f7;
+  background-color: white;
+  color: #073dc4;
   font-size: 1rem;
   cursor: pointer;
-}`
+}
+button:active{
+  background-color: #073dc4;
+  color: #f7f7f7;
+}
+`

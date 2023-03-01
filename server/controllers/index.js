@@ -179,7 +179,7 @@ async function addCompanyBio(req, res) {
       return res.status(500).send({ error: 'Failed To Add Bio' })
     }
     companyBio = await COMPANY_BIO.create({
-      _id: req.body.id,
+      companyID: req.body.id,
       logo: req.body.logo,
       website: req.body.website,
       location: req.body.location,
@@ -339,6 +339,7 @@ async function postJob(req, res) {
     let company = await COMPANY.findOne({ company_name: req.body.company_name })
     if (company) {
       job = await POST_JOB.create({
+        companyID : req.body.id,
         company_name: req.body.company_name,
         job_role: req.body.job_role,
         require_skills: req.body.require_skills,

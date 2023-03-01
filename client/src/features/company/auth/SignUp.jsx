@@ -25,7 +25,7 @@ const CompanySignUp = () => {
         <label for="otp">Enter OTP :</label>
         <div className="otp">
           <input className="otpinp" type="number" name="otp" id="fn" />
-          <button className="otp">Send OTP</button>
+          <button className="sendotp">Send OTP</button>
         </div>
         <button type="submit" className="submit">
         <Link to="/CompanyHome">Sign Up</Link> 
