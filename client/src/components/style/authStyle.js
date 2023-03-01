@@ -27,7 +27,7 @@ export const Style = styled.div`
     padding-top: 0.2%;
   }
   .welcome {
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     color: #2150c9;
     margin: auto;
     text-align : center;

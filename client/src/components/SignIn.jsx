@@ -11,7 +11,6 @@ const Signin = (props) => {
       <Style>
         <div className="head">
           <img src="images/logo.svg" alt="logo" className='logo' />
-          <span className="welcome">Welcome To Online Job Portal</span>
         </div>
         <div className="card">
           <span className="signup">Sign In</span>
