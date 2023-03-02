@@ -28,7 +28,6 @@ export const NavStyle = styled.div`
     list-style: none;
     color: #00288d;
     cursor: pointer;
-    margin-left: 20px;
   }
   li:hover {
     color: blue;

@@ -27,7 +27,9 @@ function localVariables(req, res, next) {
 //  Vrrify OTP Middleware
 async function VerifyOtp(req, res, next) {
   let otp = req.body.OTP
-  if (otp === parseInt(req.app.locals.OTP)) {
+  console.log(otp);
+  console.log(req.app.locals.OTP);
+  if (otp === (req.app.locals.OTP)) {
     req.app.locals.OTP = null
     req.app.locals.resetSession = true
     return next()
