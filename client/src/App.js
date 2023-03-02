@@ -24,20 +24,12 @@ function App() {
         <Routes>
           <Route exact path="/" element={<GetStarted />} />
           <Route exact path="/selectrole" element={<SelectRole />} />
+          <Route exact path="/CandidateSignUp" element={<CandidateSignUp />} />
+            <Route exact path="/CompanySignUp" element={<CompanySignUp />} />
+            <Route exact path="/SignIn" element={<SignIn />} />
           <Route element={<ProtectedRoutes />}>
-            <Route
-              exact
-              path="/CandidateSignUp"
-              element={<CandidateSignUp />}
-            />
             <Route exact path="/CandidateBio" element={<CandidateBio />} />
             <Route exact path="/CandidateCV" element={<CandidateCV />} />
-            <Route
-              exact
-              path="/CompanySignUp"
-              element={<CompanySignUp />}
-            />
-            <Route exact path="/SignIn" element={<SignIn />} />
             <Route exact path="/CompanyBio" element={<CompanyBio />} />
             <Route exact path="/CandidateHome" element={<CandidateHome />} />
             <Route exact path="/CandidateProfile" element={<Profile />} />

@@ -1,8 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { NavStyle } from '../../components/style/navStyle'
 
 const Navbar = () => {
+  const navigate = useNavigate()
+  function logout() {
+    localStorage.clear()
+    navigate('/')
+  }
   return (
     <NavStyle>
       <img src="images/logo.svg" alt="" />
@@ -25,6 +30,7 @@ const Navbar = () => {
         <Link to="/candidateProfile" className="link">
           <li>Profile</li>
         </Link>
+        <li onClick={logout}>Logout</li>
       </ul>
     </NavStyle>
   )

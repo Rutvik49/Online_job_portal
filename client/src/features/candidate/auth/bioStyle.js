@@ -54,6 +54,7 @@ export const Style = styled.div`
     border: 1px solid #3661ce;
     border-radius: 50%;
     color: transparent;
+    cursor: pointer;
   }
   .upload{
     display: none;

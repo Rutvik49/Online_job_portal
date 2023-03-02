@@ -1,6 +1,6 @@
 import React from "react";
 import { Style } from '../../../features/candidate/auth/bioStyle'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const CompanyBio = () => {
   return <Style>
@@ -20,7 +20,10 @@ const CompanyBio = () => {
         <textarea type="textarea" name="decsription" id="bio" />
         <label for="size" className='bio companySize'>Company Size :</label>
         <input type="number" name="company_size" id="cb" />
-        <button type="submit" className='submit'>Next</button>
+        <Link to="/companyHome" className='link'>
+        <button type="submit" className='submit'>Get Started
+        </button>
+        </Link>
       </div>
 </Style>;
 };

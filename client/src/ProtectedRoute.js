@@ -1,8 +1,9 @@
 import React from "react";
 import {  Outlet, Navigate } from 'react-router-dom';
 const useAuth=()=>{
+  let token=localStorage.getItem('authtoken') || true
     const user = {loggedIN : true}
-    return user && user.loggedIN
+    return token && user.loggedIN
 }
 
 const ProtectedRoutes = () => {
