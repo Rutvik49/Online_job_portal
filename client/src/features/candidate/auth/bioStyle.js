@@ -82,19 +82,17 @@ export const Style = styled.div`
     overflow: hidden;
     resize: none;
   }
-  .link{
-    width: 100%;
-  }
-  .link .submit {
+  .submit {
     text-decoration: none;
     color: #f7f7f7;
     margin : 4% auto;
     height: 6vh;
-    width: 100%;
+    width: 101.5%;
     border-radius: 5px;
     border: 1px solid #3661ce;
     background-color: #073dc4;
     color: #f7f7f7;
     font-size: 1rem;
     cursor: pointer;
-  }`
+  }
+  `

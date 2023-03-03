@@ -5,7 +5,9 @@ const ProfileCard = (props) => {
   let top=props.top
   return <NavStyle style={{ marginTop: top}}>  
   <div className="container">
-    <img src="" alt="Profiel" />
+    <div className="logo">
+    <img src={props.logo} alt="Profile" />
+    </div>
     <div className="discription">
         <span className="name">{props.name}</span>
         <span className="role site">{props.role}</span>
