@@ -7,7 +7,7 @@ const Company_Bio_Schema = new mongoose.Schema({
     unique: true,
   },
   logo: {
-    type: Buffer,
+    type: String,
   },
   website: {
     type: String,

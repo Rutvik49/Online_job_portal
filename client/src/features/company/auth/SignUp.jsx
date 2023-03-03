@@ -25,10 +25,10 @@ const CompanySignUp = () => {
     })
     // console.log(await res.json());
     let data= await res.json()
-    console.log(data.authtoken);
+    console.log(data);
     if(data.authtoken){
       localStorage.setItem('authtoken',data.authtoken)
-      navigate('/companyHome')
+      navigate('/companybio')
     }
   }
 

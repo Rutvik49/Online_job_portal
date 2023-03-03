@@ -15,6 +15,7 @@ const {
   updateCandidateCV,
   postJob,
   deleteJob,
+  getTelentedEmp,
   GenerateOtp,
 } = require('../controllers')
 const router = express.Router()
@@ -37,6 +38,7 @@ router.get('/getcompanybio', validate, getCompanyBio)
 router.put('/updatecompanybio', validate, updateCompanyBio)
 router.post('/addcandidatecv', validate, addCandidateCV)
 router.get('/getcandidatecv', validate, getCandidateCV)
+router.get('/getTelentedEmp', getTelentedEmp)
 router.put('/updatecandidatecv', validate, updateCandidateCV)
 router.post('/postjob', validate, postJob)
 router.delete('/deletejob', validate, deleteJob)

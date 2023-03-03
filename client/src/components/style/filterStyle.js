@@ -29,6 +29,39 @@ input {
   border-radius: 5px;
   padding-left: 1%;
 }
+input:focus{
+  box-shadow: 1px 1px 3px #3661ce;
+}
+.dropdown1 {
+  margin-top: 1.9%;
+  margin-left: -22%;
+  width: 21.5%;
+  background-color: white;
+  display: flex;
+  position:absolute;
+  flex-direction: column;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+.dropdown2 {
+  margin-top: 1.9%;
+  margin-left: 24.5%;
+  width: 21.5%;
+  background-color: white;
+  display: flex;
+  position:absolute;
+  flex-direction: column;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+.dropdown-row {
+  cursor: pointer;
+  text-align: start;
+  margin: 2px 0;
+}
+.dropdown1:empty, .dropdown2:empty {
+  border: none;
+}
 button {
   height: 4vh;
   border-radius: 5px;
@@ -39,7 +72,7 @@ button {
   font-size: 1rem;
   cursor: pointer;
 }
-button:active{
+button:active, button:hover{
   background-color: #073dc4;
   color: #f7f7f7;
 }

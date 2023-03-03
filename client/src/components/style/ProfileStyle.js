@@ -14,10 +14,20 @@ export const NavStyle = styled.div`
     display: flex;
     justify-content: center;
   }
-  img {
+  .logo {
     width: 20%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  img{
+    width: 85%;
+    height: 85%;
+    border:1px solid #c8d7ff;
+    border-radius: 7px;
   }
   .discription {
+    margin-left:1%;
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -46,11 +56,14 @@ export const NavStyle = styled.div`
   }
   .viewProfile {
     margin-top: 1%;
+    margin-right: 3%;
     font-size: 0.8rem;
     color: #073dc4;
     text-decoration: underline;
     width: 20%;
+    height: 20%;
     text-align: right;
+    cursor:pointer;
   }
   @media (max-width: 820px) {
     margin-top: 10vh;

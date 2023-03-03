@@ -176,7 +176,7 @@ async function addCompanyBio(req, res) {
   try {
     let companyBio = await COMPANY_BIO.findOne({ _id: req.body.id })
     if (companyBio) {
-      return res.status(500).send({ error: 'Failed To Add Bio' })
+      return res.status(500).send({ error: 'Bio already there' })
     }
     companyBio = await COMPANY_BIO.create({
       companyID: req.body.id,
@@ -186,7 +186,7 @@ async function addCompanyBio(req, res) {
       description: req.body.description,
       companySize: req.body.companySize,
     })
-    return res.status(200).send({ status: 'Bio Added Successfully' })
+    return res.status(200).send({ status: 'Bio Added Successfully',check:true })
   } catch (error) {
     return res.status(500).send({ error: 'Failed To Add Bio' })
   }
@@ -195,9 +195,11 @@ async function addCompanyBio(req, res) {
 //  Get Company Bio route
 async function getCompanyBio(req, res) {
   try {
-    let companyBio = await COMPANY_BIO.findOne({ _id: req.body.id })
+    let user = await COMPANY.findOne({ _id: req.body.id })
+    let companyBio = await COMPANY_BIO.findOne({ companyID: req.body.id })
+    const name= user.company_name
     if (companyBio) {
-      return res.status(200).send({ status: 'sucess', companyBio })
+      return res.status(200).send({ status: 'sucess', company_name:name, companyBio })
     }
     return res.status(500).send({ error: 'Company Bio Not Found' })
   } catch (error) {
@@ -373,8 +375,28 @@ async function deleteJob(req, res) {
   }
 }
 
+//Get Talented Employee route
+async function getTelentedEmp(req, res) {
+  try {
+    // let Temp1= await CANDIDATE_CV.find()
+    // console.log(Temp1.json());
+    let Temp2= await CANDIDATE.find().select("-password").select("-_id")
+    console.log(Temp2);
+    let name={
+      fname: Temp2[0].email
+    }
+    if (Temp2) {
+      return res.status(200).send({ Temp2  })
+    }
+    return res.status(404).send({ error: 'Temp Not Found' })
+  } catch (error) {
+    return res.status(500).send({ error: 'Internal Server Error' })
+  }
+}
+
 module.exports = {
   companySignup,
+  getTelentedEmp,
   companySignin,
   candidateSignup,
   candidateSignin,
