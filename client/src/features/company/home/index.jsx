@@ -29,7 +29,10 @@ useEffect(() => {
       },
     })
     let data= await res.json()
-    setForm(data)
+    if(data.status){
+      console.log(data);
+      setForm(data)
+    }
   }
   GetCompanyHome()
   return () => {

@@ -23,7 +23,7 @@ const CompanyBio = () => {
     website: '',
     location: '',
     description: '',
-    companySize: '',
+    companySize: 0
   })
   const handleChange = async (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })

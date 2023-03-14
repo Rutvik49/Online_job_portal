@@ -69,7 +69,10 @@ export const Style = styled.div`
     border: 1px solid #3661ce;
     border-radius: 9px;
   }
-  .profile,
+  .profile{
+    margin-left:3%;
+    flex: 1 0;
+  }
   .pimg {
     margin: auto;
     height: 130px;
@@ -84,6 +87,7 @@ export const Style = styled.div`
   .texture {
     display: flex;
     flex-direction: column;
+    flex: 4 1;
   }
   .name {
     font-size: 1.4rem;
