@@ -13,6 +13,10 @@ const Post_job_Schema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  location: {
+    type: String,
+    require: true,
+  },
   require_skills: {
     type: Array,
     require: true,

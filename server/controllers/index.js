@@ -94,7 +94,7 @@ async function companySignup(req, res) {
 //  Company SignIn route
 async function companySignin(req, res) {
   try {
-    let user = await COMPANY.findOne({ company_email: req.body.company_email })
+    let user = await COMPANY.findOne({ company_email: req.body.email })
     if (user) {
       let passwordCompare = await bcrypt.compare(
         req.body.password,
@@ -174,7 +174,8 @@ async function updateCandidateBio(req, res) {
 //  Create Company Bio route
 async function addCompanyBio(req, res) {
   try {
-    let companyBio = await COMPANY_BIO.findOne({ _id: req.body.id })
+    // console.log(req.body.id);
+    let companyBio = await COMPANY_BIO.findOne({ companyID: req.body.id })
     if (companyBio) {
       return res.status(500).send({ error: 'Bio already there' })
     }
@@ -186,8 +187,11 @@ async function addCompanyBio(req, res) {
       description: req.body.description,
       companySize: req.body.companySize,
     })
-    return res.status(200).send({ status: 'Bio Added Successfully',check:true })
+    return res
+      .status(200)
+      .send({ status: 'Bio Added Successfully', check: true })
   } catch (error) {
+    console.log(error)
     return res.status(500).send({ error: 'Failed To Add Bio' })
   }
 }
@@ -197,9 +201,17 @@ async function getCompanyBio(req, res) {
   try {
     let user = await COMPANY.findOne({ _id: req.body.id })
     let companyBio = await COMPANY_BIO.findOne({ companyID: req.body.id })
-    const name= user.company_name
+    const name = user.company_name
+    const email = user.company_email
     if (companyBio) {
-      return res.status(200).send({ status: 'sucess', company_name:name, companyBio })
+      return res
+        .status(200)
+        .send({
+          status: true,
+          company_name: name,
+          companyBio,
+          company_email: email,
+        })
     }
     return res.status(500).send({ error: 'Company Bio Not Found' })
   } catch (error) {
@@ -341,9 +353,10 @@ async function postJob(req, res) {
     let company = await COMPANY.findOne({ company_name: req.body.company_name })
     if (company) {
       job = await POST_JOB.create({
-        companyID : req.body.id,
+        companyID: req.body.id,
         company_name: req.body.company_name,
         job_role: req.body.job_role,
+        location: req.body.location,
         require_skills: req.body.require_skills,
         job_description: req.body.job_description,
         min_salary: req.body.min_salary,
@@ -380,13 +393,13 @@ async function getTelentedEmp(req, res) {
   try {
     // let Temp1= await CANDIDATE_CV.find()
     // console.log(Temp1.json());
-    let Temp2= await CANDIDATE.find().select("-password").select("-_id")
-    console.log(Temp2);
-    let name={
-      fname: Temp2[0].email
+    let Temp2 = await CANDIDATE.find().select('-password').select('-_id')
+    console.log(Temp2)
+    let name = {
+      fname: Temp2[0].email,
     }
     if (Temp2) {
-      return res.status(200).send({ Temp2  })
+      return res.status(200).send({ Temp2 })
     }
     return res.status(404).send({ error: 'Temp Not Found' })
   } catch (error) {
